@@ -1,0 +1,73 @@
+INDIVIDUAL PROJECT INSTRUCTIONS
+===============================
+
+Dataset description
+-------------------
+
+This dataset is composed of 1500 labeled samples. The first column is the sample id, the
+second column is the label, and there are 5 possible label values. The remaining columns
+contain 25 numeric features and 3 categorical feature(s). Missing values are present in
+a subset of the numeric and categorical feature columns.
+
+Your ZIP file also contains a hidden test feature file with the same feature columns but
+without labels. Use this file only after you have selected your final workflow, and
+submit one predicted label per row.
+
+Notice that the classes are somewhat unbalanced: some labels are more frequent than
+others. You should decide whether this affects the choice of metrics, validation
+strategy, or model settings.
+
+Mandatory task
+--------------
+
+Mandatory task. Compare the performance of a linear Support Vector Machine (for example
+sklearn.svm.LinearSVC or sklearn.svm.SVC with a linear kernel) with that of a Random
+Forest (sklearn.ensemble.RandomForestClassifier). Build a reasonable preprocessing
+pipeline for the dataset, tune the most relevant hyperparameters for both algorithms,
+and determine which approach is best for this dataset. State your final chosen algorithm
+and hyperparameters explicitly in the conclusions.
+
+General instructions
+--------------------
+
+Submission must be done on Blackboard and must include the completed Jupyter notebook
+and the test prediction file. The notebook should contain all code needed to reproduce
+your analysis, together with concise markdown comments explaining the main choices and
+results.
+
+Your analysis should include: (1) a compact exploratory data analysis; (2) a discussion
+of missing values, categorical features, scaling and any preprocessing choices; (3) a
+clear train/validation strategy or cross-validation strategy; (4) model comparison and
+hyperparameter tuning; (5) a final model choice; (6) conclusions and limitations.
+
+The notebook will be evaluated based on the quality of the methodology, the
+justification of choices, the correctness of the evaluation protocol, the clarity of the
+analysis, and the interpretation of results. You are not expected to exhaustively test
+every possible hyperparameter combination: a well-justified, budget-aware search is
+preferable to a large but poorly motivated one.
+
+You are welcome to perform additional analyses or try additional models beyond the
+mandatory task. Extra work is welcome, but it does not replace the mandatory task
+described above.
+
+The project ZIP already contains a label-free hidden test feature file. Use it only
+after choosing your final workflow. Submit a text file containing one predicted label
+per row, with no header. The hidden test score will be used as part of the evaluation,
+mainly to verify that the proposed workflow generalizes; it is not meant to turn the
+project into a leaderboard competition. Do not use the hidden test features for model
+selection.
+
+LLM audit section. Since you have access to ChatGPT Edu, include a short final section
+in your notebook discussing how an LLM would approach this project. Use the prompt
+provided below, or a lightly adapted version of it. Briefly summarize the suggested
+workflow, compare it with your own choices, and comment on whether you see any
+limitations, omissions, or questionable choices in the LLM suggestion. If you think the
+suggestion is fully reasonable, explain why. This section is meant to evaluate critical
+judgment, not prompting skills.
+
+Suggested prompt: I am working on a machine learning project for a course. I have a
+tabular classification dataset with numerical features, categorical features, possible
+missing values, and a hidden test set. Please propose a complete sklearn workflow
+including EDA, preprocessing, train/validation strategy, model comparison,
+hyperparameter tuning, evaluation metrics, and plots. Explain the reasoning behind each
+step and provide Python code.
